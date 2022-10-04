@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= foundProduct.name %>
+    </title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+    <h1 class=""">Product Details :</h1>
+    <div class=" container-fluid text-warning">
+
+        <ul>
+            <li> <b>NAME : <i><span class="text-success text-uppercase fs-5">
+                            <%=foundProduct.name %>
+                        </span></b></i>
+            </li>
+            <li> <b>PRICE : <i><span class="text-success text-uppercase fs-6">
+                            <%=foundProduct.price %>
+                        </span> </i></b>
+            </li>
+            <li> <b>CATEGORY :<i><span class="text-success fs-6"> <a
+                                href="/products?category=<%=foundProduct.category  %>  ">
+                                <%=foundProduct.category %>
+                            </a></span></i></b>
+            </li>
+            <li>
+                Farm :<a href="/farms/<%=foundProduct.farm._id%>">
+                    <%=foundProduct.farm.name %>
+                </a>
+            </li>
+        </ul>
+        </div>
+        <section>
+            <div class="d-grid gap-2 d-md-block">
+                <a href="/products/<%=foundProduct._id  %>/edit " class=" btn btn-success text-white text-opacity-50"
+                    role="button">Edit
+                    Product</a>
+                <a href="/products" class=" btn btn-info" role="button">Back to Product List</a>
+            </div>
+        </section>
+        <form class="row g-3 m-1" action="/products/<%=foundProduct._id  %>?_method=DELETE" method="POST">
+            <div class="col-md-6">
+                <button class="btn btn-danger">Delete</button>
+            </div>
+        </form>
+
+
+</body>
+
+</html>

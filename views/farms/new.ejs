@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+    <h1>Add a new Farm</h1>
+
+
+
+    <form action="/farms" method="POST" class="row g-3">
+        <div class="col-md-6">
+            <label for="name" class="form-label">Enter a Farm Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter name" class="form-control">
+            <label for="city" class="form-label">Enter city</label>
+            <input type="text" name="city" id="city" placeholder="CITY" class="form-control">
+            <label for="email" class="form-label">Enter E-mail</label>
+            <input type="email" name="email" id="email" placeholder="mail-id" class="form-control">
+
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-primary">Submit</button>
+            <a href="/farms" class=" btn btn-warning" role="button">Cancel</a>
+        </div>
+
+
+    </form>
+</body>
+
+</html>

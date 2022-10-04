@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-dark text-white">
+    <h1>Editing the Product Details</h1>
+
+    <form action="/products/<%=foundProduct._id%>?_method=PUT" method="POST" class="row g-3">
+        <div class="col-md-2">
+            <label for="name" class="form-label">Enter a new product</label>
+            <input type="text" name="name" id="name" placeholder="Enter name" value="<%=foundProduct.name  %>  "
+                class="form-control">
+            <label for="price" class="form-label">Enter price</label>
+            <input type="number" name="price" id="price" placeholder="List in US dollars"
+                value="<%=foundProduct.price%>" class="form-control">
+            <label for="category" class="form-label">Select category</label>
+            <select id="category" name="category" class="form-select">
+
+                <option value="vegetable" <%=foundProduct.category=='vegetable' ? 'selected' :"" %> >vegetable</option>
+                <option value="fruit" <%=foundProduct.category=='fruit' ? 'selected' :"" %> >fruit</option>
+                <option value="dairy" <%=foundProduct.category=='dairy' ? 'selected' :"" %> >dairy</option>
+
+            </select>
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-warning">Submit</button>
+            <a href="/products/<%=foundProduct._id%> " class=" btn btn-warning" role="button">Cancel</a>
+        </div>
+</body>
+
+</html>

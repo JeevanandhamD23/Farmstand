@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body class="p-3 mb-2 bg-dark text-white">
+    <h1>
+        <%=category %> Products
+    </h1>
+    <div class="d-flex flex-row mb-3">
+        <ul>
+            <% for(let product of products){ %>
+
+                <li class=" p-1 mb-1 bg-dark bg-gradient border border-warning">
+                    <a href="/products/<%=product._id  %> ">
+                        <%= product.name %>
+                    </a>
+                </li>
+
+                <% } %>
+        </ul>
+    </div>
+
+    <a href="/products/new" class="p-3 mb-2 bg-success text-white rounded-3">Add a New Product</a>
+    <% if(category!=='All' ) {%>
+        <a href="/products" class="p-3 mb-2 bg-info text-white rounded-3">All products</a>
+        <% } %>
+            <a href="/farms" class="d-inline-block bg-info p-3 mb-2 text-white rounded-3">Farm page</a>
+</body>
+
+</html>
